@@ -2,29 +2,19 @@ package com.example;
 
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mockito;
-import org.mockito.Spy;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.junit.Assert;
-
 import java.util.List;
 
-@RunWith(MockitoJUnitRunner.class)
+
 
 public class FelineTest {
-    @Spy
 
-    Feline feline;
+    Feline feline = new Feline();
     @Test
 
-    public void eatMeat() {
-        try {
+    public void eatMeat() throws Exception{
             var felineMeal = feline.eatMeat();
-            Assert.assertEquals(felineMeal, List.of("Животные", "Птицы", "Рыба"));
-        }catch(Exception exception){
-            Assert.fail();
-        }
+            Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"), felineMeal);
     }
 
     @Test
@@ -34,15 +24,13 @@ public class FelineTest {
     }
 
     @Test
-    public void testGetKittens() {
-        feline.getKittens();
-        Mockito.verify(feline, Mockito.times(1)).getKittens();
+    public void testGetKittens1() {
+        Assert.assertEquals(1,feline.getKittens());
     }
     @Test
     public void testGetKittens3()
     {
-        Assert.assertEquals(3, feline.getKittens(3));
-        Mockito.verify(feline, Mockito.times(1)).getKittens(3);
+        Assert.assertEquals(3,feline.getKittens(3));
     }
 
 }

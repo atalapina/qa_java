@@ -28,13 +28,11 @@ public class CatTest {
     }
 
     @Test
-    public void getFoodCatEatMeat() {
-        try {
+    public void getFoodCatEatMeat() throws Exception {
+
             cat.getFood();
             Mockito.verify(feline, Mockito.times(1)).eatMeat();
-        }catch (Exception exception){
-            Assert.fail();
+
         }
-    }
 
 }

@@ -1,5 +1,5 @@
 package com.example;
 
-public interface iFeline extends Predator{
+public interface NewFeline extends Predator{
     int getKittens();
 }
